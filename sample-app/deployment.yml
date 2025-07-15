@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: sample-app
-        image: nginx:latest
+        image: nginx:1.21
         ports:
         - containerPort: 80
         resources:
@@ -25,3 +25,11 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "500m"
+        volumeMounts:
+        - name: html-content
+          mountPath: /usr/share/nginx/html
+          readOnly: true
+      volumes:
+      - name: html-content
+        configMap:
+          name: nginx-html-config
