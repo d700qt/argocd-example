@@ -21,10 +21,10 @@ spec:
         resources:
           requests:
             memory: "64Mi"
-            cpu: "500"
+            cpu: "300"
           limits:
             memory: "128Mi"
-            cpu: "500"
+            cpu: "300"
         volumeMounts:
         - name: html-content
           mountPath: /usr/share/nginx/html
