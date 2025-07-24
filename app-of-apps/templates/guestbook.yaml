@@ -14,3 +14,10 @@ spec:
     path: guestbook
     repoURL: https://github.com/argoproj/argocd-example-apps
     targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+  
