@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-app
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: argocd-sample-app
+    server: {{ .Values.config.spec.destination.server }}
+  project: default
+  source:
+    path: sample-app
+    repoURL: https://github.com/d700qt/argocd-example
+    targetRevision: HEAD
