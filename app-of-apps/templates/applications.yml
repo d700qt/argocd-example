@@ -14,6 +14,9 @@ spec:
     path: sample-app
     repoURL: https://github.com/d700qt/argocd-example
     targetRevision: HEAD
+    tool:
+      helm:
+        releaseName: sample-app
   syncPolicy:
     automated:
       prune: true
